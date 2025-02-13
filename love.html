@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白爱心</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            font-family: Arial, sans-serif;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="message">我喜欢你！</div>
+
+    <script>
+        // 你可以在这里添加一些交互效果
+        const heart = document.querySelector('.heart');
+        const message = document.querySelector('.message');
+
+        heart.addEventListener('click', () => {
+            message.textContent = "我也喜欢你！";
+            message.style.color = "#ff0000";
+        });
+    </script>
+</body>
+</html>
